@@ -130,17 +130,19 @@ body[data-theme="adventcalendar"] {
 
   .output {
     position:fixed;
+    opacity:0;
     top:-16em;
     left:0;
-    height:0em;
+    height:0;
     width:100%;
     background:rgba(255, 255, 255, .95);
     color:#000;
     z-index:1;
     overflow: auto;
-    @include transition(all .35s ease-out);
+    @include transition(all .45s ease-in-out);
 
     &.active {
+      opacity:1;
       top:0;
       height:100%;
     }
