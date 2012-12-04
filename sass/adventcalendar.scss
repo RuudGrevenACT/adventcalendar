@@ -7,10 +7,12 @@ body[data-theme="adventcalendar"] {
   font: 1.5em/1.45em sans-serif;
   color:#fff;
 
+  background-image: url(http://timpietrusky.github.com/adventcalendar/img/background_trees.jpg);
+
   @include background(
     linear-gradient(right, rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)),
     linear-gradient(right, rgba(206, 190, 41, .3) 0%, rgba(155, 31, 80, .3) 33%, rgba(41, 137, 216, .3) 71%, rgba(137, 180, 255, .3) 95%),
-    url(/img/background_trees.jpg)
+    url(http://timpietrusky.github.com/adventcalendar/img/background_trees.jpg)
   );
 
   background-size: 100%;
@@ -34,8 +36,9 @@ body[data-theme="adventcalendar"] {
   h1 {
     font: 2.6em 'Oleo Script Swash Caps', cursive;
     color:rgba(170, 0, 0, .9);
-    text-shadow: .05em .05em .035em rgba(255, 255, 255, .9);
-    padding-left:.5em;
+    text-shadow: .05em .05em .015em rgba(255, 255, 255, .9);
+    padding-left:.25em;
+    margin:.5em 0;
   }
 
   article[data-high="1"] {
@@ -47,13 +50,15 @@ body[data-theme="adventcalendar"] {
 
     ul {
       list-style: none;
-      padding:0;
+      margin:0 0 .25em 0;
+      padding:0 0 0 1em;
 
       li {
         line-height:1.4em;
         &:before {
-          content: 'g';
+          content: ';';
           font-family: 'Typicons', sans-serif;
+          margin:.15em .55em 0 0;
         }
       }
     }
@@ -121,44 +126,6 @@ body[data-theme="adventcalendar"] {
   footer {
     font-size:.75em;
     line-height:1.35em;
-
-    ul {
-      list-style:none;
-      width:100%;
-      display:block;
-      clear:both;
-
-      li {
-
-      }
-    }
-  }
-
-  .number {
-    font-size:2.35em;
-    font-weight: bold;
-    background:rgba(255, 255, 255, 1);
-    width:1.5em;
-    @include border-radius(.35em);
-    text-align: center;
-    @include box-shadow(.05em .05em .15em rgba(0, 0, 0, .4));
-  }
-
-  .close {
-    width:100%;
-    height:2em;
-    z-index:1;
-    font-size:2.5em;
-    padding:.5em;
-    text-align:right;
-    background:rgba(0, 0, 0, .9);
-    color:rgba(255, 255, 255, .8);
-    cursor:pointer;
-  }
-
-  .day {
-    float:left;
-    font: 2.5em/.5em 'Clicker Script', sans-serif;
   }
 
   .output {
@@ -177,31 +144,77 @@ body[data-theme="adventcalendar"] {
       top:0;
       height:100%;
     }
+
+    h1 {
+      margin:0 0 .25em 0;
+    }
+
+    ul {
+      list-style: none;
+      margin:0;
+      padding:0 0 0 1em;
+
+      li {
+
+        &:before {
+          font-family: 'Typicons', sans-serif;
+          content:";";
+          margin:-.15em .55em 0 0;
+          color: rgba(0, 0, 0, .5);
+        }
+      }
+    }
   }
 
   .typicons {
     font-family: 'Typicons', sans-serif;
   }
 
-  .red,
-  .yellow,
-  .green {
-    padding:.25em .25em 0 .25em;
-    @include border-radius(.25em);
+  .number,
+  .day {
+    font-size:2.35em;
+    font-weight: bold;
     width:1.5em;
+    @include border-radius(.35em);
+    text-align: center;
+  }
+
+  .number {
+    background:rgba(255, 255, 255, 1);
+    @include box-shadow(.05em .05em .15em rgba(0, 0, 0, .4));
+  }
+
+  .day {
+    float:left;
+    padding:0;
+    color:#fff;
+    font: 1.6em/.45em 'Oleo Script Swash Caps', cursive;
+  }
+
+  .close {
+    width:100%;
     height:1.5em;
-    display:inline-block;
+    z-index:1;
+    font-size:2.5em;
+    padding:.5em;
+    text-align:right;
+    background:rgba(0, 0, 0, .9);
+    color:#fff;
+    cursor:pointer;
+    @include transition(all .35s ease-out);
+
+    &:hover {
+      color:rgba(0, 148, 117, 1);
+    }
   }
 
-  .red {
-    background:#c00;
+  .date {
+    font-size:.85em;
+    margin:0 0 .25em 0;
+    color:rgba(0, 0, 0, .7);
   }
 
-  .yellow {
-    background:#dd0;
-  }
-
-  .green {
-    background:#0c0;
+  .typicons {
+    font-family: 'Typicons', sans-serif;
   }
 }
